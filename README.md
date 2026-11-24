@@ -2,7 +2,7 @@
 
 My personal website: blog, portfolio and hobby projects.
 
-Built with [Astro](https://astro.build), hosted on Cloudflare Pages. Every push to `main` publishes the site automatically.
+Built with [Astro](https://astro.build), hosted on Cloudflare (Workers static assets). Every push to `main` publishes the site automatically.
 
 ## Where things live
 

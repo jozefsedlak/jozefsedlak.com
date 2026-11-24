@@ -1,6 +1,6 @@
 ---
 title: This website
-description: My personal site, built with Astro and hosted on Cloudflare Pages.
+description: My personal site, built with Astro and hosted on Cloudflare.
 date: 2026-11-24
 status: in-progress
 ---
