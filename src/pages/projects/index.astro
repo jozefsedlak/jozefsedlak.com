@@ -9,7 +9,7 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft))
   <h1>Projects</h1>
   <ul class="list">
     {projects.map((p) => (
-      <li><a href={`/projects/${p.id}/`}>{p.data.title}</a> <span class="muted">· {p.data.status}</span><br />{p.data.description}</li>
+      <li><a href={`/projects/${p.id}/`}>{p.data.title}</a><span class="muted status">{p.data.status}</span>{p.data.description && <span class="desc">{p.data.description}</span>}</li>
     ))}
   </ul>
 </Base>

@@ -12,19 +12,26 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft))
 ---
 <Base>
   <h1>Hi, I'm Jozef.</h1>
-  <p>This is my corner of the internet: writing, work I'm proud of, and whatever I'm tinkering with.</p>
+  <p class="lede">This is my corner of the internet: writing, work I'm proud of, and whatever I'm tinkering with.</p>
 
-  <h2>Latest posts</h2>
-  <ul class="list">
-    {posts.map((p) => (
-      <li><a href={`/blog/${p.id}/`}>{p.data.title}</a> <span class="muted">· <FormattedDate date={p.data.date} /></span></li>
-    ))}
-  </ul>
-
-  <h2>Projects</h2>
-  <ul class="list">
-    {projects.map((p) => (
-      <li><a href={`/projects/${p.id}/`}>{p.data.title}</a> <span class="muted">· {p.data.status}</span><br />{p.data.description}</li>
-    ))}
-  </ul>
+  <div class="home-grid">
+    <section>
+      <h2 class="section-title">Latest posts</h2>
+      <ul class="list">
+        {posts.map((p) => (
+          <li><a href={`/blog/${p.id}/`}>{p.data.title}</a><span class="muted"><FormattedDate date={p.data.date} /></span></li>
+        ))}
+      </ul>
+      <a class="more" href="/blog/">All posts →</a>
+    </section>
+    <section>
+      <h2 class="section-title">Projects</h2>
+      <ul class="list">
+        {projects.map((p) => (
+          <li><a href={`/projects/${p.id}/`}>{p.data.title}</a><span class="muted status">{p.data.status}</span></li>
+        ))}
+      </ul>
+      <a class="more" href="/projects/">All projects →</a>
+    </section>
+  </div>
 </Base>
