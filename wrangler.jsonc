@@ -5,5 +5,7 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
-  }
+  },
+  // Needed for preview builds of pull requests (`npx wrangler preview`). Empty is fine.
+  "previews": {}
 }
