@@ -10,7 +10,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <h1>Blog</h1>
   <ul class="list">
     {posts.map((p) => (
-      <li><a href={`/blog/${p.id}/`}>{p.data.title}</a> <span class="muted">· <FormattedDate date={p.data.date} /></span><br />{p.data.description}</li>
+      <li><a href={`/blog/${p.id}/`}>{p.data.title}</a><span class="muted"><FormattedDate date={p.data.date} /></span>{p.data.description && <span class="desc">{p.data.description}</span>}</li>
     ))}
   </ul>
 </Base>
