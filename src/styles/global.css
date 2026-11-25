@@ -1,4 +1,4 @@
-/* Look: "Clean" — one sans-serif font, lots of white space, one teal accent. */
+/* Look: "Clean" — classic serif text (Iowan Old Style, as on leerob.com), small sans for dates, one teal accent. */
 :root {
   --bg: #ffffff;
   --fg: #111418;
@@ -7,7 +7,9 @@
   --accent: #0f766e;
   --border: #eceef1;
   --code-bg: #f5f6f8;
-  --font: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Iowan Old Style ships with Apple devices; Windows gets Palatino, others Georgia. */
+  --font: 'Iowan Old Style', 'IowanOldStyle-Roman', 'Palatino Linotype', Palatino, Georgia, serif;
+  --sans: ui-sans-serif, -apple-system, system-ui, 'Segoe UI', sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
@@ -28,8 +30,7 @@ body {
   margin: 0 auto;
   max-width: 44rem;
   padding: 0 1.25rem 4rem;
-  font: 16px/1.7 var(--font);
-  font-feature-settings: 'cv11', 'ss01';
+  font: 17px/1.6 var(--font);
 }
 a { color: var(--accent); text-underline-offset: 3px; }
 a:hover { text-decoration-thickness: 2px; }
@@ -37,24 +38,24 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Header */
 header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem 1.5rem; padding: 1.75rem 0 3.5rem; }
-header .name { font-weight: 700; letter-spacing: -.01em; color: var(--fg); text-decoration: none; }
+header .name { font-weight: 600; letter-spacing: -.01em; color: var(--fg); text-decoration: none; }
 nav { display: flex; gap: 1.4rem; font-size: .95rem; }
 nav a { color: var(--muted); text-decoration: none; }
 nav a:hover, nav a[aria-current='page'] { color: var(--fg); }
 
 /* Type */
 h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
-h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -.03em; margin: 0 0 .75rem; }
-h2 { font-size: 1.35rem; font-weight: 650; letter-spacing: -.015em; margin: 2.5rem 0 .75rem; }
+h1 { font-size: 2.2rem; font-weight: 600; letter-spacing: -.02em; margin: 0 0 .75rem; }
+h2 { font-size: 1.45rem; font-weight: 600; letter-spacing: -.015em; margin: 2.5rem 0 .75rem; }
 h3 { font-size: 1.1rem; font-weight: 600; margin: 2rem 0 .5rem; }
 .lede { color: var(--muted); font-size: 1.1rem; max-width: 46ch; margin: 0 0 3rem; }
-.muted { color: var(--subtle); font-size: .875rem; }
-.section-title { font-size: .95rem; font-weight: 600; letter-spacing: 0; margin: 0 0 .25rem; }
+.muted { color: var(--subtle); font: .85rem/1.6 var(--sans); }
+.section-title { font-size: 1.2rem; font-weight: 600; margin: 0 0 .25rem; }
 
 /* Lists of posts / projects */
 ul.list { list-style: none; padding: 0; margin: 0; }
 ul.list li { padding: .85rem 0; border-top: 1px solid var(--border); }
-ul.list li a { display: block; color: var(--fg); font-weight: 550; text-decoration: none; }
+ul.list li a { display: block; color: var(--fg); font-weight: 400; text-decoration: none; }
 ul.list li a:hover { color: var(--accent); }
 ul.list .desc { display: block; color: var(--muted); font-size: .95rem; margin-top: .15rem; }
 .status::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: .4rem; vertical-align: 1px; }
